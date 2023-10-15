@@ -1,0 +1,134 @@
+.footer {
+  background-color: var(--eerie-black);
+
+  &__category {
+    padding: 5rem 0;
+    border-bottom: 1px solid var(--onyx);
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    &--title {
+      font-size: 1.68rem;
+      color: var(--salmon-pink);
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .category {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0 2rem;
+      align-items: center;
+
+      &__title {
+        display: inline-block;
+        font-size: 1.45rem;
+        text-transform: uppercase;
+      }
+
+      &__link {
+        display: inline-block;
+        color: inherit;
+        position: relative;
+
+        &:not(:last-child)::after {
+          content: "";
+          display: inline-block;
+          height: 1.75rem;
+          width: 2px;
+          background-color: var(--onyx);
+          position: absolute;
+          right: -1rem;
+          top: 0.4rem;
+        }
+      }
+    }
+  }
+
+  &__navigation {
+    padding: 5rem 0;
+    border-bottom: 1px solid var(--onyx);
+
+    .container {
+      display: flex;
+      gap: 2rem;
+
+      @media only screen and (max-width: $bp-medium) {
+        display: grid;
+        gap: 2rem;
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      @media only screen and (max-width: $bp-small) {
+        display: grid;
+        gap: 2rem;
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .navigation {
+      min-width: calc(20% - 1.6rem);
+
+      &__title {
+        font-size: 1.575rem;
+        color: var(--white);
+        margin-bottom: 2.5rem;
+
+        &::after {
+          content: "";
+          width: 7rem;
+          height: 1px;
+          background-color: var(--salmon-pink);
+          display: block;
+        }
+      }
+
+      &__item {
+        display: flex;
+        gap: 1rem;
+
+        ion-icon {
+          min-width: 2.5rem;
+          height: 2.5rem;
+          display: inline-block;
+        }
+
+        address {
+          font-style: normal;
+          margin-bottom: 0.7rem;
+        }
+      }
+
+      &__link {
+        color: inherit;
+        margin-bottom: 0.7rem;
+        transition: all 0.1s;
+
+        &:hover {
+          color: var(--salmon-pink);
+        }
+      }
+    }
+  }
+
+  &__bottom {
+    padding: 3rem 0;
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    &--copyright {
+      font-size: 1.575rem;
+      letter-spacing: 1.1px;
+      font-weight: 500;
+    }
+  }
+}

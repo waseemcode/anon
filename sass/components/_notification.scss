@@ -1,0 +1,66 @@
+.notification {
+  max-width: 30rem;
+  background-color: var(--white);
+  z-index: 900;
+  position: fixed;
+  left: 2rem;
+  bottom: 3rem;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 5px 20px hsla(0, 0%, 0%, 0.15);
+
+  animation: slideInOut 10s ease-in-out infinite;
+
+  display: flex;
+  align-items: start;
+  gap: 1.5rem;
+
+  &__btn {
+    --ionicon-stroke-width: 50px;
+
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    color: var(--sonic-silver);
+
+    ion-icon {
+      width: 1.8rem;
+    }
+  }
+  
+  
+
+  &__img {
+    border: 1px solid var(--cultured);
+    border-radius: 0.5rem;
+
+    img {
+      width: 6.8rem;
+    }
+  }
+
+  &__content {
+    padding-right: 2rem;
+  }
+
+  &__text {
+    font-size: 1.25rem;
+    font-weight: 300;
+    margin-bottom: 0.8rem;
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: var(--eerie-black);
+  }
+
+  &__time {
+    font-size: 1.25rem;
+    font-weight: 300;
+  }
+}
+
+.notification.close {
+  display: none;
+}

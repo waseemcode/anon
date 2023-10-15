@@ -1,0 +1,120 @@
+.banner {
+  margin-bottom: 3rem;
+
+  .slider {
+    display: flex;
+    gap: 1rem;
+    overflow: auto hidden;
+    -webkit-scroll-snap-type: inline mandatory;
+    -ms-scroll-snap-type: inline mandatory;
+    scroll-snap-type: inline mandatory;
+    overscroll-behavior-inline: contain;
+
+    &__item {
+      height: 45rem;
+      min-width: 100%;
+      border-radius: 1rem;
+      overflow: hidden;
+      position: relative;
+      scroll-snap-align: start;
+
+      @media only screen and (max-width: $bp-large) {
+        height: 350px;
+      }
+
+      @media only screen and (max-width: $bp-small) {
+        height: 410px;
+      }
+
+      &--img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+
+        @media only screen and (max-width: $bp-small) {
+          object-position: right;
+        }
+      }
+
+      &--content {
+        width: 90%;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 12rem;
+
+        @media only screen and (max-width: $bp-large) {
+          left: 5rem;
+        }
+
+        @media only screen and (max-width: $bp-small) {
+          background-color: hsla(0, 0%, 100%, 0.8);
+          padding: 20px;
+          border-radius: 10px;
+          top: 40%;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+
+        p {
+          font-size: 3rem;
+          color: var(--salmon-pink);
+          font-weight: 500;
+          margin-bottom: 1rem;
+
+          @media only screen and (max-width: $bp-small) {
+            font-size: 15px;
+          }
+        }
+
+        h1 {
+          color: var(--eerie-black);
+          font-size: 4.7rem;
+          width: 70%;
+          line-height: 1;
+          margin-bottom: 1rem;
+
+          @media only screen and (max-width: $bp-large) {
+            font-size: 4rem;
+            width: 50%;
+          }
+
+          @media only screen and (max-width: $bp-small) {
+            font-size: 26px;
+            width: 60%;
+          }
+        }
+
+        p[data-price] {
+          color: var(--sonic-silver);
+          font-size: 2.4rem;
+
+          span {
+            font-weight: 700;
+            font-size: 3.3rem;
+          }
+
+          @media only screen and (max-width: $bp-small) {
+            display: none;
+          }
+        }
+
+        a {
+          padding: 0.7rem 2rem;
+          font-size: 1.57rem;
+          background-color: var(--salmon-pink);
+          display: inline-block;
+          border-radius: 0.5rem;
+          text-transform: uppercase;
+          color: var(--white);
+          font-weight: 600;
+
+          @media only screen and (max-width: $bp-small) {
+            font-size: 10px;
+          }
+        }
+      }
+    }
+  }
+}
